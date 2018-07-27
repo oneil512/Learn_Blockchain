@@ -39,3 +39,8 @@ fallbackProvider.getGasPrice().then(function(p) {
 etherscanProviderMain.getEtherPrice().then(function(p) {
 	console.log('ether price ', p);
 });
+
+// Get notified on every new block
+fallbackProvider.on('block', function(blockNumber) {
+    console.log('New Block: ' + blockNumber);
+});
